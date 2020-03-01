@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import random
 
 df = pd.read_csv("crypto-markets.csv", parse_dates = ["date"], index_col = 3)
 df = df[['name', 'close']]
