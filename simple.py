@@ -10,10 +10,10 @@ log_ret = log_ret.dropna(axis = 1, how = "all").dropna(axis = 0, how = "all")
 vol = log_ret.std()
 f = 1
 results = pd.DataFrame(columns = ["Size", "Return", "Volatility"])
-for i in range(1000):
+for i in range(10000):
     randomcryptos = random.randint(1, 30)
-    cryptos = random.sample(range(1,2071), randomcryptos)
-    randomday = random.sample(range(1,699), 1)
+    cryptos = random.sample(range(1,2070), randomcryptos)
+    randomday = random.sample(range(1,698), 1)
     size = len(cryptos)
     mean = log_ret.iloc[randomday, cryptos].mean(axis = 1)
     std = np.sqrt(vol.iloc[cryptos].sum())/len(cryptos)
